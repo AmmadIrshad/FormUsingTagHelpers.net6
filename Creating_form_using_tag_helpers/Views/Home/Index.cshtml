@@ -1,0 +1,68 @@
+﻿@model Creating_form_using_tag_helpers.Models.Employee;
+@{
+    ViewData["Title"] = "Home Page";
+}
+<div class="container">
+    <div class="row">
+        <div class="col-sm-4">
+             <div asp-validation-summary="All" class="text-danger"></div> 
+            @* d-grid and btn block for button to take full space *@
+            <form class="d-grid" asp-controller="Home" asp-action="Index" method="post">
+                @* <label asp-for="name" class="mb-2">Enter Name:</label> *@
+                <input asp-for="Name" placeholder="Enter Name" class="form-control" />
+                <span asp-validation-for="Name" style="color:red"></span>
+                <br />
+                 <input asp-for="Email" placeholder="Enter Email" class="form-control" />
+                <span asp-validation-for="Email" style="color:red"></span>
+                <br />
+                <input asp-for="Age" placeholder="Enter Age" class="form-control" />
+                <span asp-validation-for="Age" style="color:red"></span>
+                <br />
+                <input asp-for="Password" type="password" placeholder="Enter password" class="form-control" />
+                <span asp-validation-for="Password" style="color:red"></span>
+                <br />
+                <label asp-for="ConfirmPassword"></label>
+                <input asp-for="ConfirmPassword" type="password" placeholder="Enter Confirm password" class="form-control" />
+                <span asp-validation-for="ConfirmPassword" style="color:red"></span>
+                <br />
+                <input asp-for="PNumber" placeholder="Enter PNumber" class="form-control" />
+                <span asp-validation-for="PNumber" style="color:red"></span>
+                <br />
+                <input asp-for="WebsiteUrl" placeholder="Enter WebsiteUrl" class="form-control" />
+                <span asp-validation-for="WebsiteUrl" style="color:red"></span>
+                <br />
+                @* asp-items for getting enum values *@
+               @*  <select asp-for="Gender" class="form-control" asp-items="Html.GetEnumSelectList<Gender>()">
+                    <option value="">Select Gender</option>
+                </select>
+                <br />
+                
+                <input asp-for="designation" placeholder="Enter Designation" class="form-control" />
+                <br />
+                <input asp-for="salary" placeholder="Enter salary" class="form-control" />
+                <br />
+                <label asp-for="Married" class="mb-2">
+                    Married :
+                </label>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" asp-for="Married" value="Yes">
+                    <label class="form-check-label" for="flexRadioDefault1">
+                        Yes
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" asp-for="Married" value="NO">
+                    <label class="form-check-label" for="flexRadioDefault2">
+                        NO
+                    </label>
+                </div>
+                <br />
+                <textarea asp-for="designation" class="form-control" placeholder="Enter description" rows="5" ></textarea>
+                <br /> *@
+                <input type="submit" value="Submit" class="btn btn-outline-primary btn-block" />
+            </form>
+        </div>
+    </div>
+</div>
+<script src="~/lib/jquery-validation/dist/jquery.validate.min.js"></script>
+<script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
